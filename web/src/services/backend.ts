@@ -1,4 +1,4 @@
-﻿const env = import.meta.env as Record<string, string | undefined>
+const env = import.meta.env as Record<string, string | undefined>
 
 function envValue(key: string): string {
   const direct = env[key]
@@ -14,8 +14,8 @@ function envValue(key: string): string {
 const explicitBase = envValue('VITE_BACKEND_BASE_URL')
 const explicitWs = envValue('VITE_BACKEND_WS_URL')
 
-export const backendBase = explicitBase || 'http://localhost:8081'
-export const backendWs = explicitWs || 'ws://localhost:8081/ws'
+export const backendBase = explicitBase || 'https://db.agrokit.agrocalera.app'
+export const backendWs = explicitWs || 'wss://db.agrokit.agrocalera.app/ws'
 
 const missingEnv = [
   !explicitBase ? 'VITE_BACKEND_BASE_URL' : '',

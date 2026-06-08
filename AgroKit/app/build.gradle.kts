@@ -1,4 +1,4 @@
-﻿plugins {
+plugins {
     alias(libs.plugins.android.application)
     id("org.jetbrains.kotlin.android")
     alias(libs.plugins.kotlin.compose)
@@ -7,14 +7,14 @@
 }
 
 android {
-    val backendBaseUrl = (project.findProperty("BACKEND_BASE_URL") as String?) ?: "https://agrokit.agrocalera.app"
-    val backendWsUrl = (project.findProperty("BACKEND_WS_URL") as String?) ?: "wss://agrokit.agrocalera.app/ws"
+    val backendBaseUrl = (project.findProperty("BACKEND_BASE_URL") as String?) ?: "https://db.agrokit.agrocalera.app"
+    val backendWsUrl = (project.findProperty("BACKEND_WS_URL") as String?) ?: "wss://db.agrokit.agrocalera.app/ws"
 
     namespace = "com.amm19.agrokit"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.amm19.agrokit"
+        applicationId = "com.amm19.agrokitdb"
         minSdk = 33
         targetSdk = 36
         versionCode = 1
@@ -51,6 +51,20 @@ android {
         compose = true
         buildConfig = true
     }
+}
+
+val copyDebugApkAsAgroKitDb by tasks.registering {
+    doLast {
+        copy {
+            from(layout.buildDirectory.file("outputs/apk/debug/app-debug.apk"))
+            into(layout.buildDirectory.dir("outputs/apk/debug"))
+            rename { "AgroKit-DB-debug.apk" }
+        }
+    }
+}
+
+tasks.matching { it.name == "assembleDebug" }.configureEach {
+    finalizedBy(copyDebugApkAsAgroKitDb)
 }
 
 kapt {

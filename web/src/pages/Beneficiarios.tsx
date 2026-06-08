@@ -233,7 +233,7 @@ export function BeneficiariosPage() {
       {error ? <ErrorBanner message={error} /> : null}
       {actionError ? <ErrorBanner message={actionError} /> : null}
       {actionMessage ? (
-        <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-700">{actionMessage}</div>
+        <div className="rounded-xl border border-[#d7d9e8] bg-[#f3f4fa] p-3 text-sm text-[#313862]">{actionMessage}</div>
       ) : null}
 
       <div className="grid gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm md:grid-cols-4">
@@ -243,7 +243,7 @@ export function BeneficiariosPage() {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="DNI, nombre o producto"
-            className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
+            className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none transition focus:border-[#313862] focus:ring-2 focus:ring-[#d7d9e8]"
           />
         </label>
 
@@ -252,7 +252,7 @@ export function BeneficiariosPage() {
           <select
             value={statusFilter}
             onChange={(event) => setStatusFilter(event.target.value as StatusFilter)}
-            className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
+            className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none transition focus:border-[#313862] focus:ring-2 focus:ring-[#d7d9e8]"
           >
             <option value="TODOS">Todos</option>
             <option value="COMPLETO">Completos</option>
@@ -265,7 +265,7 @@ export function BeneficiariosPage() {
           <select
             value={kitFilter}
             onChange={(event) => setKitFilter(event.target.value)}
-            className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
+            className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none transition focus:border-[#313862] focus:ring-2 focus:ring-[#d7d9e8]"
           >
             <option value="TODOS">Todos</option>
             {kits.map((kit) => (
@@ -296,7 +296,7 @@ export function BeneficiariosPage() {
                       DNI: {row.dni} | {row.area || '-'} | {row.gerencia || '-'} | Sector: {row.sectorNombre || row.sectorId || '-'}
                     </p>
                     <div className="mt-2 flex flex-wrap gap-2">
-                      <span className="rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-700">
+                      <span className="rounded-full bg-[#e4e6f0] px-2.5 py-1 text-xs font-semibold text-[#313862]">
                         Completos: {row.completedProducts}
                       </span>
                       <span className="rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-700">
@@ -363,7 +363,7 @@ export function BeneficiariosPage() {
                           <span
                             className={`rounded-full px-2.5 py-1 text-xs font-semibold ${
                               product.status === 'Completo'
-                                ? 'bg-emerald-100 text-emerald-700'
+                                ? 'bg-[#e4e6f0] text-[#313862]'
                                 : product.status === 'Parcial'
                                   ? 'bg-blue-100 text-blue-700'
                                   : 'bg-amber-100 text-amber-700'
@@ -440,7 +440,7 @@ export function BeneficiariosPage() {
                           <span
                             className={`inline-flex rounded-full px-2 py-0.5 text-[10px] font-semibold xl:text-[11px] ${
                               product.status === 'Completo'
-                                ? 'bg-emerald-100 text-emerald-700'
+                                ? 'bg-[#e4e6f0] text-[#313862]'
                                 : product.status === 'Parcial'
                                   ? 'bg-blue-100 text-blue-700'
                                   : 'bg-amber-100 text-amber-700'
@@ -468,7 +468,7 @@ export function BeneficiariosPage() {
                           <>
                             <td rowSpan={row.products.length} className="px-2 py-2 align-top">
                               <div className="flex flex-col gap-1 whitespace-nowrap">
-                                <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 xl:text-[11px]">
+                                <span className="rounded-full bg-[#e4e6f0] px-2 py-0.5 text-[10px] font-semibold text-[#313862] xl:text-[11px]">
                                   Completos: {row.completedProducts}
                                 </span>
                                 <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold text-amber-700 xl:text-[11px]">

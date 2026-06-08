@@ -51,7 +51,7 @@ export function LoginPage() {
           />
         </section>
 
-        <section className="relative flex min-h-[720px] overflow-hidden rounded-3xl border border-white/80 bg-[radial-gradient(circle_at_8%_8%,rgba(14,111,67,0.09),transparent_30%),linear-gradient(145deg,#ffffff_0%,#eef7f3_100%)] px-4 py-8 shadow-[0_26px_90px_rgba(15,23,42,0.12)] sm:px-8 lg:px-10">
+        <section className="relative flex min-h-[720px] overflow-hidden rounded-3xl border border-white/80 bg-[radial-gradient(circle_at_8%_8%,rgba(49,56,98,0.09),transparent_30%),linear-gradient(145deg,#ffffff_0%,#eef7f3_100%)] px-4 py-8 shadow-[0_26px_90px_rgba(15,23,42,0.12)] sm:px-8 lg:px-10">
           <DecorativeLeaf className="-right-8 -top-10 h-56 w-56 rotate-12 opacity-[0.08]" />
           <DecorativeLeaf className="right-10 top-28 h-36 w-36 opacity-[0.07]" />
           <DecorativeLeaf className="-bottom-12 right-4 h-56 w-56 -rotate-45 opacity-[0.07]" />
@@ -70,7 +70,7 @@ export function LoginPage() {
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <label className="block">
                   <span className="mb-2 block text-sm font-semibold text-slate-800">Correo electrónico</span>
-                  <span className="flex h-12 items-center gap-3 rounded-xl border border-slate-300 bg-white px-4 text-slate-500 shadow-sm transition focus-within:border-emerald-500 focus-within:ring-2 focus-within:ring-emerald-100">
+                  <span className="flex h-12 items-center gap-3 rounded-xl border border-slate-300 bg-white px-4 text-slate-500 shadow-sm transition focus-within:border-[#313862] focus-within:ring-2 focus-within:ring-[#e4e6f0]">
                     <MailIcon className="h-5 w-5 shrink-0" />
                     <input
                       type="email"
@@ -85,7 +85,7 @@ export function LoginPage() {
 
                 <label className="block">
                   <span className="mb-2 block text-sm font-semibold text-slate-800">Contraseña</span>
-                  <span className="flex h-12 items-center gap-3 rounded-xl border border-slate-300 bg-white px-4 text-slate-500 shadow-sm focus-within:border-emerald-500 focus-within:ring-2 focus-within:ring-emerald-100">
+                  <span className="flex h-12 items-center gap-3 rounded-xl border border-slate-300 bg-white px-4 text-slate-500 shadow-sm focus-within:border-[#313862] focus-within:ring-2 focus-within:ring-[#e4e6f0]">
                     <LockIcon className="h-5 w-5 shrink-0" />
                     <input
                       type={showPassword ? 'text' : 'password'}
@@ -111,7 +111,7 @@ export function LoginPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="h-12 w-full rounded-xl bg-emerald-600 px-4 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(5,150,105,0.24)] transition hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-200 disabled:cursor-not-allowed disabled:opacity-60"
+                  className="h-12 w-full rounded-xl bg-[#313862] px-4 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(49,56,98,0.24)] transition hover:bg-[#272d50] focus:outline-none focus:ring-2 focus:ring-[#d7d9e8] disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {submitting ? 'Ingresando...' : 'Iniciar sesión'}
                 </button>
@@ -171,7 +171,7 @@ function EyeIcon({ className }: { className?: string }) {
 
 function DecorativeLeaf({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 180 180" fill="none" className={`pointer-events-none absolute text-emerald-700 ${className ?? ''}`} aria-hidden="true">
+    <svg viewBox="0 0 180 180" fill="none" className={`pointer-events-none absolute text-[#313862] ${className ?? ''}`} aria-hidden="true">
       <path
         d="M151.5 26.6C87.5 26.6 35.6 78.5 35.6 142.5c64 0 115.9-51.9 115.9-115.9Z"
         fill="currentColor"

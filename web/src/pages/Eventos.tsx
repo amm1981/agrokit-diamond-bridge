@@ -39,7 +39,7 @@ const statusLabels: Record<EventSummary['status'], string> = {
 
 const statusClasses: Record<EventSummary['status'], string> = {
   draft: 'bg-slate-100 text-slate-700 ring-slate-200',
-  published: 'bg-emerald-50 text-emerald-700 ring-emerald-200',
+  published: 'bg-[#f3f4fa] text-[#313862] ring-[#d7d9e8]',
   closed: 'bg-amber-50 text-amber-700 ring-amber-200',
   archived: 'bg-zinc-100 text-zinc-600 ring-zinc-200',
 }
@@ -220,7 +220,7 @@ export function EventosPage() {
           <button
             type="button"
             onClick={openNewEventModal}
-            className="inline-flex h-11 items-center gap-2 rounded-lg bg-emerald-700 px-4 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+            className="inline-flex h-11 items-center gap-2 rounded-lg bg-[#313862] px-4 text-sm font-semibold text-white shadow-sm transition hover:bg-[#272d50] focus:outline-none focus:ring-2 focus:ring-[#d7d9e8]"
           >
             <span className="text-xl leading-none">+</span>
             Nuevo evento
@@ -231,7 +231,7 @@ export function EventosPage() {
       {error ? <ErrorBanner message={error} /> : null}
       {actionError ? <ErrorBanner message={actionError} /> : null}
       {actionMessage ? (
-        <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-700">{actionMessage}</div>
+        <div className="rounded-lg border border-[#d7d9e8] bg-[#f3f4fa] p-3 text-sm text-[#313862]">{actionMessage}</div>
       ) : null}
 
       <div className="grid gap-4 md:grid-cols-3">
@@ -249,7 +249,7 @@ export function EventosPage() {
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Buscar por ID o nombre..."
-              className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+              className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm outline-none transition focus:border-[#313862] focus:ring-2 focus:ring-[#e4e6f0]"
             />
           </label>
         </div>
@@ -393,7 +393,7 @@ export function EventosPage() {
                     disabled={!!editingId}
                     onChange={(e) => setForm((current) => ({ ...current, id: e.target.value.trim() }))}
                     placeholder="ejemplo: navidad_2026"
-                    className="h-11 w-full rounded-lg border border-slate-300 px-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 disabled:bg-slate-100"
+                    className="h-11 w-full rounded-lg border border-slate-300 px-3 text-sm outline-none transition focus:border-[#313862] focus:ring-2 focus:ring-[#e4e6f0] disabled:bg-slate-100"
                   />
                 </label>
 
@@ -403,7 +403,7 @@ export function EventosPage() {
                     value={form.name}
                     onChange={(e) => setForm((current) => ({ ...current, name: e.target.value }))}
                     placeholder="Navidad 2026"
-                    className="h-11 w-full rounded-lg border border-slate-300 px-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+                    className="h-11 w-full rounded-lg border border-slate-300 px-3 text-sm outline-none transition focus:border-[#313862] focus:ring-2 focus:ring-[#e4e6f0]"
                   />
                 </label>
               </div>
@@ -415,7 +415,7 @@ export function EventosPage() {
                     type="date"
                     value={form.startDateInput}
                     onChange={(e) => setForm((current) => ({ ...current, startDateInput: e.target.value }))}
-                    className="h-11 w-full rounded-lg border border-slate-300 px-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+                    className="h-11 w-full rounded-lg border border-slate-300 px-3 text-sm outline-none transition focus:border-[#313862] focus:ring-2 focus:ring-[#e4e6f0]"
                   />
                 </label>
                 <label className="block">
@@ -424,7 +424,7 @@ export function EventosPage() {
                     type="date"
                     value={form.endDateInput}
                     onChange={(e) => setForm((current) => ({ ...current, endDateInput: e.target.value }))}
-                    className="h-11 w-full rounded-lg border border-slate-300 px-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+                    className="h-11 w-full rounded-lg border border-slate-300 px-3 text-sm outline-none transition focus:border-[#313862] focus:ring-2 focus:ring-[#e4e6f0]"
                   />
                 </label>
                 <label className="block">
@@ -432,7 +432,7 @@ export function EventosPage() {
                   <select
                     value={form.status}
                     onChange={(e) => setForm((current) => ({ ...current, status: e.target.value as EventSummary['status'] }))}
-                    className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+                    className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm outline-none transition focus:border-[#313862] focus:ring-2 focus:ring-[#e4e6f0]"
                   >
                     <option value="draft">Borrador</option>
                     <option value="published">Publicado</option>
@@ -451,7 +451,7 @@ export function EventosPage() {
                         type="checkbox"
                         checked={form.sectorIds.includes(sector.id)}
                         onChange={() => toggleSector(sector.id)}
-                        className="h-4 w-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500"
+                        className="h-4 w-4 rounded border-slate-300 text-[#313862] focus:ring-[#313862]"
                       />
                       {sector.name}
                     </label>
@@ -470,7 +470,7 @@ export function EventosPage() {
                 <button
                   type="submit"
                   disabled={saving}
-                  className="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-700 disabled:opacity-60"
+                  className="rounded-lg bg-[#313862] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#272d50] disabled:opacity-60"
                 >
                   {saving ? 'Guardando...' : editingId ? 'Actualizar evento' : 'Crear evento'}
                 </button>
@@ -497,7 +497,7 @@ function MetricCard({
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
       <div className="flex items-center gap-4">
-        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600">
+        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#f3f4fa] text-[#313862]">
           <MetricIcon icon={icon} />
         </span>
         <div>
@@ -545,7 +545,7 @@ function VigenciaBadge({ vigente }: { vigente: boolean }) {
   return (
     <span
       className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ring-1 ${
-        vigente ? 'bg-emerald-50 text-emerald-700 ring-emerald-200' : 'bg-slate-100 text-slate-600 ring-slate-200'
+        vigente ? 'bg-[#f3f4fa] text-[#313862] ring-[#d7d9e8]' : 'bg-slate-100 text-slate-600 ring-slate-200'
       }`}
     >
       {vigente ? 'Vigente' : 'No vigente'}
@@ -584,7 +584,7 @@ function PaginationButton({
       onClick={onClick}
       className={`inline-flex h-9 min-w-9 items-center justify-center rounded-lg border px-3 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-50 ${
         active
-          ? 'border-emerald-600 bg-emerald-600 text-white shadow-sm'
+          ? 'border-[#313862] bg-[#313862] text-white shadow-sm'
           : 'border-slate-300 bg-white text-slate-700 hover:bg-slate-50'
       }`}
     >

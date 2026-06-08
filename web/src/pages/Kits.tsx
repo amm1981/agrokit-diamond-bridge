@@ -1,4 +1,4 @@
-﻿import { useEffect, useMemo, useState, type FormEvent } from 'react'
+import { useEffect, useMemo, useState, type FormEvent } from 'react'
 import { EmptyState } from '../components/EmptyState'
 import { ErrorBanner } from '../components/ErrorBanner'
 import { Loader } from '../components/Loader'
@@ -351,10 +351,10 @@ export function KitsPage() {
       {actionError ? <ErrorBanner message={actionError} /> : null}
       {stockError ? <ErrorBanner message={stockError} /> : null}
       {actionMessage ? (
-        <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-700">{actionMessage}</div>
+        <div className="rounded-xl border border-[#d7d9e8] bg-[#f3f4fa] p-3 text-sm text-[#313862]">{actionMessage}</div>
       ) : null}
       {stockMessage ? (
-        <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-700">{stockMessage}</div>
+        <div className="rounded-xl border border-[#d7d9e8] bg-[#f3f4fa] p-3 text-sm text-[#313862]">{stockMessage}</div>
       ) : null}
 
       <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
@@ -362,7 +362,7 @@ export function KitsPage() {
           <button
             type="button"
             onClick={openCreateModal}
-            className="rounded-xl bg-emerald-700 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-800"
+            className="rounded-xl bg-[#313862] px-4 py-2 text-sm font-semibold text-white hover:bg-[#272d50]"
           >
             Crear kit
           </button>
@@ -376,7 +376,7 @@ export function KitsPage() {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="ID o nombre"
-            className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-200"
+            className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#313862] focus:ring-2 focus:ring-[#d7d9e8]"
           />
         </label>
       </div>
@@ -524,7 +524,7 @@ export function KitsPage() {
               value={stockQuery}
               onChange={(event) => setStockQuery(event.target.value)}
               placeholder="Codigo o nombre"
-              className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none transition focus:border-violet-500 focus:ring-2 focus:ring-violet-200"
+              className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none transition focus:border-[#313862] focus:ring-2 focus:ring-[#d7d9e8]"
             />
           </label>
         </div>
@@ -573,14 +573,14 @@ export function KitsPage() {
                         onChange={(event) =>
                           setStockInputs((current) => ({ ...current, [item.productCode]: event.target.value }))
                         }
-                        className="w-full rounded-lg border border-slate-300 px-2 py-2 text-sm outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-200"
+                        className="w-full rounded-lg border border-slate-300 px-2 py-2 text-sm outline-none focus:border-[#313862] focus:ring-2 focus:ring-[#d7d9e8]"
                       />
                     </label>
                     <button
                       type="button"
                       onClick={() => void onSaveGeneralStock(item.productCode)}
                       disabled={savingStockCode === item.productCode}
-                      className="mt-2 w-full rounded-lg border border-violet-200 bg-violet-50 px-3 py-2 text-xs font-semibold text-violet-700 hover:bg-violet-100 disabled:opacity-60"
+                      className="mt-2 w-full rounded-lg border border-[#d7d9e8] bg-[#f3f4fa] px-3 py-2 text-xs font-semibold text-[#313862] hover:bg-[#e4e6f0] disabled:opacity-60"
                     >
                       {savingStockCode === item.productCode ? 'Guardando...' : 'Guardar stock general'}
                     </button>
@@ -605,7 +605,7 @@ export function KitsPage() {
                                 },
                               }))
                             }
-                            className="w-24 rounded-lg border border-slate-300 px-2 py-1 text-xs outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-200"
+                            className="w-24 rounded-lg border border-slate-300 px-2 py-1 text-xs outline-none focus:border-[#313862] focus:ring-2 focus:ring-[#d7d9e8]"
                           />
                         </label>
                       ))}
@@ -613,7 +613,7 @@ export function KitsPage() {
                         type="button"
                         onClick={() => void onSaveSectorStocks(item.productCode)}
                         disabled={savingSectorStockCode === item.productCode}
-                        className="w-full rounded-lg border border-violet-200 bg-violet-50 px-3 py-2 text-xs font-semibold text-violet-700 hover:bg-violet-100 disabled:opacity-60"
+                        className="w-full rounded-lg border border-[#d7d9e8] bg-[#f3f4fa] px-3 py-2 text-xs font-semibold text-[#313862] hover:bg-[#e4e6f0] disabled:opacity-60"
                       >
                         {savingSectorStockCode === item.productCode ? 'Guardando...' : 'Guardar sectores'}
                       </button>
@@ -668,13 +668,13 @@ export function KitsPage() {
                           onChange={(event) =>
                             setStockInputs((current) => ({ ...current, [item.productCode]: event.target.value }))
                           }
-                          className="w-24 rounded-lg border border-slate-300 px-2 py-1 text-sm outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-200"
+                          className="w-24 rounded-lg border border-slate-300 px-2 py-1 text-sm outline-none focus:border-[#313862] focus:ring-2 focus:ring-[#d7d9e8]"
                         />
                         <button
                           type="button"
                           onClick={() => void onSaveGeneralStock(item.productCode)}
                           disabled={savingStockCode === item.productCode}
-                          className="rounded-lg border border-violet-200 bg-violet-50 px-3 py-1.5 text-xs font-semibold text-violet-700 hover:bg-violet-100 disabled:opacity-60"
+                          className="rounded-lg border border-[#d7d9e8] bg-[#f3f4fa] px-3 py-1.5 text-xs font-semibold text-[#313862] hover:bg-[#e4e6f0] disabled:opacity-60"
                         >
                           {savingStockCode === item.productCode ? 'Guardando...' : 'Guardar'}
                         </button>
@@ -701,7 +701,7 @@ export function KitsPage() {
                                       },
                                     }))
                                   }
-                                  className="w-20 rounded-lg border border-slate-300 px-2 py-1 text-xs outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-200"
+                                  className="w-20 rounded-lg border border-slate-300 px-2 py-1 text-xs outline-none focus:border-[#313862] focus:ring-2 focus:ring-[#d7d9e8]"
                                 />
                               </div>
                             )
@@ -714,7 +714,7 @@ export function KitsPage() {
                               type="button"
                               onClick={() => void onSaveSectorStocks(item.productCode)}
                               disabled={savingSectorStockCode === item.productCode}
-                              className="rounded-lg border border-violet-200 bg-violet-50 px-3 py-1.5 text-xs font-semibold text-violet-700 hover:bg-violet-100 disabled:opacity-60"
+                              className="rounded-lg border border-[#d7d9e8] bg-[#f3f4fa] px-3 py-1.5 text-xs font-semibold text-[#313862] hover:bg-[#e4e6f0] disabled:opacity-60"
                             >
                               {savingSectorStockCode === item.productCode ? 'Guardando...' : 'Guardar sectores'}
                             </button>
@@ -765,7 +765,7 @@ export function KitsPage() {
                     disabled={!!editingId}
                     onChange={(event) => setForm((current) => ({ ...current, id: event.target.value }))}
                     placeholder="Ejemplo: KIT_MADRE_2026"
-                    className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-200 disabled:bg-slate-100"
+                    className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#313862] focus:ring-2 focus:ring-[#d7d9e8] disabled:bg-slate-100"
                   />
                 </label>
 
@@ -775,7 +775,7 @@ export function KitsPage() {
                     value={form.name}
                     onChange={(event) => setForm((current) => ({ ...current, name: event.target.value }))}
                     placeholder="Ejemplo: Kit dia de la madre"
-                    className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-200"
+                    className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#313862] focus:ring-2 focus:ring-[#d7d9e8]"
                   />
                 </label>
               </div>
@@ -786,7 +786,7 @@ export function KitsPage() {
                   <button
                     type="button"
                     onClick={addProductRow}
-                    className="rounded-lg border border-emerald-700 bg-emerald-50 px-2 py-1 text-xs font-semibold text-emerald-700 hover:iolet-50 px-2 py-1 text-xs font-semibold text-violet-700 hover:bg-violet-100"
+                    className="rounded-lg border border-[#313862] bg-[#f3f4fa] px-2 py-1 text-xs font-semibold text-[#313862] hover:bg-[#e4e6f0]"
                   >
                     + Producto
                   </button>
@@ -868,7 +868,7 @@ export function KitsPage() {
                 <button
                   type="submit"
                   disabled={saving}
-                  className="w-full rounded-xl bg-emerald-700 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-800 disabled:opacity-60 sm:w-auto"
+                  className="w-full rounded-xl bg-[#313862] px-4 py-2 text-sm font-semibold text-white hover:bg-[#272d50] disabled:opacity-60 sm:w-auto"
                 >
                   {saving ? 'Guardando...' : editingId ? 'Actualizar kit' : 'Crear kit'}
                 </button>

@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS agrokit CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE agrokit;
+CREATE DATABASE IF NOT EXISTS agrokit_diamond CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE agrokit_diamond;
 
 DROP TABLE IF EXISTS delivery_evidences;
 DROP TABLE IF EXISTS delivery_items;

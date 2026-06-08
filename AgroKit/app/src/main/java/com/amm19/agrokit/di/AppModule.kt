@@ -23,7 +23,7 @@ object AppModule {
         return Room.databaseBuilder(
             context,
             AgroKitDatabase::class.java,
-            "agrokit.db"
+            "agrokit_db.db"
         ).fallbackToDestructiveMigration(true).build()
     }
 

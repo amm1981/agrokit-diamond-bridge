@@ -405,7 +405,7 @@ export function TrabajadoresPage() {
       {error ? <ErrorBanner message={error} /> : null}
       {actionError ? <ErrorBanner message={actionError} /> : null}
       {actionMessage ? (
-        <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-700">
+        <div className="rounded-xl border border-[#d7d9e8] bg-[#f3f4fa] p-3 text-sm text-[#313862]">
           {actionMessage}
         </div>
       ) : null}
@@ -416,7 +416,7 @@ export function TrabajadoresPage() {
             type="button"
             onClick={openCreateModal}
             disabled={importing}
-            className="rounded-xl bg-emerald-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-800"
+            className="rounded-xl bg-[#313862] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#272d50]"
           >
             Agregar beneficiario
           </button>

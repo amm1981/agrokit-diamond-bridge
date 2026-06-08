@@ -28,7 +28,7 @@ interface DateFilterState {
 }
 
 const CHART_COLORS = {
-  delivered: '#059669',
+  delivered: '#313862',
   pending: '#94a3b8',
   sector: '#2563eb',
   gerencia: '#7c3aed',
@@ -127,7 +127,7 @@ function KpiCard({
 }) {
   const toneClass =
     tone === 'success'
-      ? 'border-emerald-200 bg-emerald-50'
+      ? 'border-[#d7d9e8] bg-[#f3f4fa]'
       : tone === 'warning'
         ? 'border-amber-200 bg-amber-50'
         : 'border-slate-200 bg-white'
@@ -512,7 +512,7 @@ export function DashboardPage() {
             </span>
             <span
               className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                rangeActiveNow ? 'bg-emerald-100 text-emerald-700' : 'bg-red-100 text-red-700'
+                rangeActiveNow ? 'bg-[#e4e6f0] text-[#313862]' : 'bg-red-100 text-red-700'
               }`}
             >
               {rangeActiveNow ? 'Evento Activo' : 'Evento Inactivo'}
@@ -536,7 +536,7 @@ export function DashboardPage() {
             <select
               value={sectorFilter}
               onChange={(event) => setSectorFilter(event.target.value)}
-              className="h-10 w-full rounded-lg border border-slate-300 px-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+              className="h-10 w-full rounded-lg border border-slate-300 px-3 text-sm outline-none transition focus:border-[#313862] focus:ring-2 focus:ring-[#e4e6f0]"
             >
               <option value="TODOS">Todas</option>
               {sectorOptions.map((item) => (
@@ -552,7 +552,7 @@ export function DashboardPage() {
             <select
               value={gerenciaFilter}
               onChange={(event) => setGerenciaFilter(event.target.value)}
-              className="h-10 w-full rounded-lg border border-slate-300 px-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+              className="h-10 w-full rounded-lg border border-slate-300 px-3 text-sm outline-none transition focus:border-[#313862] focus:ring-2 focus:ring-[#e4e6f0]"
             >
               <option value="TODOS">Todas</option>
               {gerenciaOptions.map((value) => (
@@ -568,7 +568,7 @@ export function DashboardPage() {
             <select
               value={datePreset}
               onChange={(event) => updateDateFilter({ preset: event.target.value as DatePreset })}
-              className="h-10 w-full rounded-lg border border-slate-300 px-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+              className="h-10 w-full rounded-lg border border-slate-300 px-3 text-sm outline-none transition focus:border-[#313862] focus:ring-2 focus:ring-[#e4e6f0]"
             >
               <option value="HOY">Hoy</option>
               <option value="ULTIMOS_7_DIAS">Ultimos 7 dias</option>
@@ -584,7 +584,7 @@ export function DashboardPage() {
                   type="date"
                   value={customStartDate}
                   onChange={(event) => updateDateFilter({ customStartDate: event.target.value })}
-                  className="h-10 w-full rounded-lg border border-slate-300 px-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+                  className="h-10 w-full rounded-lg border border-slate-300 px-3 text-sm outline-none transition focus:border-[#313862] focus:ring-2 focus:ring-[#e4e6f0]"
                 />
               </label>
               <label>
@@ -593,7 +593,7 @@ export function DashboardPage() {
                   type="date"
                   value={customEndDate}
                   onChange={(event) => updateDateFilter({ customEndDate: event.target.value })}
-                  className="h-10 w-full rounded-lg border border-slate-300 px-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+                  className="h-10 w-full rounded-lg border border-slate-300 px-3 text-sm outline-none transition focus:border-[#313862] focus:ring-2 focus:ring-[#e4e6f0]"
                 />
               </label>
             </>
@@ -748,7 +748,7 @@ export function DashboardPage() {
                   </div>
                   <span
                     className={`mt-2 inline-block rounded-full px-2.5 py-1 text-xs font-semibold ${
-                      row.isCritical ? 'bg-amber-100 text-amber-700' : 'bg-emerald-100 text-emerald-700'
+                      row.isCritical ? 'bg-amber-100 text-amber-700' : 'bg-[#e4e6f0] text-[#313862]'
                     }`}
                   >
                     {row.isCritical ? 'Revisar' : 'OK'}
@@ -786,7 +786,7 @@ export function DashboardPage() {
                       <td className="py-3">
                         <span
                           className={`rounded-full px-2.5 py-1 text-xs font-semibold ${
-                            row.isCritical ? 'bg-amber-100 text-amber-700' : 'bg-emerald-100 text-emerald-700'
+                            row.isCritical ? 'bg-amber-100 text-amber-700' : 'bg-[#e4e6f0] text-[#313862]'
                           }`}
                         >
                           {row.isCritical ? 'Revisar' : 'OK'}

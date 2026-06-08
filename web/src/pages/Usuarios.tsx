@@ -211,7 +211,7 @@ export function UsuariosPage() {
       {error ? <ErrorBanner message={error} /> : null}
       {actionError ? <ErrorBanner message={actionError} /> : null}
       {actionMessage ? (
-        <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-700">{actionMessage}</div>
+        <div className="rounded-xl border border-[#d7d9e8] bg-[#f3f4fa] p-3 text-sm text-[#313862]">{actionMessage}</div>
       ) : null}
 
       <div className="flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm md:flex-row md:items-end md:justify-between">
@@ -229,7 +229,7 @@ export function UsuariosPage() {
           type="button"
           onClick={openCreateModal}
           disabled={!canCreate}
-          className="rounded-xl bg-emerald-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-800 disabled:cursor-not-allowed disabled:opacity-60"
+          className="rounded-xl bg-[#313862] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#272d50] disabled:cursor-not-allowed disabled:opacity-60"
         >
           Crear usuario PDA
         </button>
@@ -260,7 +260,7 @@ export function UsuariosPage() {
                     {item.sectorIds.map((sectorId) => sectorNameById.get(sectorId) || sectorId).join(', ') || '-'}
                   </td>
                   <td className="px-4 py-3">
-                    <span className={`rounded-full px-3 py-1 text-xs font-semibold ${item.active ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-200 text-slate-600'}`}>
+                    <span className={`rounded-full px-3 py-1 text-xs font-semibold ${item.active ? 'bg-[#e4e6f0] text-[#313862]' : 'bg-slate-200 text-slate-600'}`}>
                       {item.active ? 'Activo' : 'Inactivo'}
                     </span>
                   </td>
@@ -404,7 +404,7 @@ export function UsuariosPage() {
                 type="button"
                 onClick={() => void submitUser()}
                 disabled={saving || (!canCreate && editingUid === null) || (!canEdit && editingUid !== null)}
-                className="rounded-xl bg-emerald-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-800 disabled:opacity-60"
+                className="rounded-xl bg-[#313862] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#272d50] disabled:opacity-60"
               >
                 {saving ? 'Guardando...' : editingUid ? 'Guardar cambios' : 'Crear usuario PDA'}
               </button>

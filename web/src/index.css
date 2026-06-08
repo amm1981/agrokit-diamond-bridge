@@ -1,4 +1,4 @@
-﻿@tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -22,7 +22,7 @@ body {
 
 .agrokit-sidebar-scroll {
   scrollbar-width: thin;
-  scrollbar-color: #059669 transparent;
+  scrollbar-color: #313862 transparent;
 }
 
 .agrokit-sidebar-scroll::-webkit-scrollbar {
@@ -34,7 +34,7 @@ body {
 }
 
 .agrokit-sidebar-scroll::-webkit-scrollbar-thumb {
-  background: #059669;
+  background: #313862;
   border-radius: 9999px;
 }
 

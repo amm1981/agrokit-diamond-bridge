@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "AgroKit"
+rootProject.name = "AgroKit-DB"
 include(":app")

@@ -14,12 +14,12 @@ import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3'
 
 loadDotEnvLikeFile()
 
-const PORT = Number(process.env.PORT || 8080)
+const PORT = Number(process.env.PORT || 3002)
 const NODE_ENV = String(process.env.NODE_ENV || 'development').trim().toLowerCase()
 const IS_PRODUCTION = NODE_ENV === 'production'
 const MYSQL_HOST = process.env.MYSQL_HOST || '127.0.0.1'
 const MYSQL_PORT = Number(process.env.MYSQL_PORT || 3306)
-const MYSQL_DB = process.env.MYSQL_DB || 'agrokit'
+const MYSQL_DB = process.env.MYSQL_DB || 'agrokit_diamond'
 const MYSQL_USER = process.env.MYSQL_USER || 'root'
 const MYSQL_PASSWORD = process.env.MYSQL_PASSWORD || ''
 const MYSQL_CONNECTION_LIMIT = Number(process.env.MYSQL_CONNECTION_LIMIT || 10)
@@ -38,8 +38,8 @@ const S3_SECRET_KEY = String(process.env.S3_SECRET_KEY || '').trim()
 const S3_PUBLIC_BASE_URL = String(process.env.S3_PUBLIC_BASE_URL || '').trim().replace(/\/$/, '')
 const S3_FORCE_PATH_STYLE = String(process.env.S3_FORCE_PATH_STYLE || 'true').trim().toLowerCase() !== 'false'
 const JWT_SECRET = String(process.env.JWT_SECRET || 'dev_insecure_change_me').trim()
-const JWT_ISSUER = String(process.env.JWT_ISSUER || 'agrokit-backend').trim()
-const JWT_AUDIENCE = String(process.env.JWT_AUDIENCE || 'agrokit-system').trim()
+const JWT_ISSUER = String(process.env.JWT_ISSUER || 'agrokit-diamond-backend').trim()
+const JWT_AUDIENCE = String(process.env.JWT_AUDIENCE || 'agrokit-diamond-system').trim()
 const JWT_EXPIRATION_HOURS = Math.max(1, Number(process.env.JWT_EXPIRATION_HOURS || 8))
 const JWT_EXPIRATION = `${JWT_EXPIRATION_HOURS}h`
 const PDA_ALLOW_CATALOG_WRITES = String(process.env.PDA_ALLOW_CATALOG_WRITES || 'false').trim().toLowerCase() === 'true'

@@ -305,7 +305,7 @@ export function UsuariosWebPage() {
 
       {error ? <ErrorBanner message={error} /> : null}
       {message ? (
-        <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-700">{message}</div>
+        <div className="rounded-xl border border-[#d7d9e8] bg-[#f3f4fa] p-3 text-sm text-[#313862]">{message}</div>
       ) : null}
 
       <div className="flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm md:flex-row md:items-end md:justify-between">
@@ -315,7 +315,7 @@ export function UsuariosWebPage() {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Correo o nombre"
-            className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
+            className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#313862] focus:ring-2 focus:ring-[#d7d9e8]"
           />
         </label>
 
@@ -323,7 +323,7 @@ export function UsuariosWebPage() {
           type="button"
           onClick={openCreateModal}
           disabled={!canCreate}
-          className="rounded-xl bg-emerald-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-800 disabled:cursor-not-allowed disabled:opacity-60"
+          className="rounded-xl bg-[#313862] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#272d50] disabled:cursor-not-allowed disabled:opacity-60"
         >
           Crear usuario web
         </button>
@@ -352,7 +352,7 @@ export function UsuariosWebPage() {
                   <td className="px-4 py-3 text-xs text-slate-700">{userItem.roleCodes.join(', ') || '-'}</td>
                   <td className="px-4 py-3 text-slate-600">{countEnabledPermissions(userItem.modulePermissions)} habilitados</td>
                   <td className="px-4 py-3">
-                    <span className={`rounded-full px-3 py-1 text-xs font-semibold ${userItem.active ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-200 text-slate-600'}`}>
+                    <span className={`rounded-full px-3 py-1 text-xs font-semibold ${userItem.active ? 'bg-[#e4e6f0] text-[#313862]' : 'bg-slate-200 text-slate-600'}`}>
                       {userItem.active ? 'Activo' : 'Inactivo'}
                     </span>
                   </td>
@@ -417,7 +417,7 @@ export function UsuariosWebPage() {
                     disabled={editingEmail !== null}
                     onChange={(event) => setForm((current) => ({ ...current, email: event.target.value }))}
                     placeholder="admin@empresa.com"
-                    className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 disabled:bg-slate-100"
+                    className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#313862] focus:ring-2 focus:ring-[#d7d9e8] disabled:bg-slate-100"
                   />
                 </label>
                 <label className="block">
@@ -425,7 +425,7 @@ export function UsuariosWebPage() {
                   <input
                     value={form.fullName}
                     onChange={(event) => setForm((current) => ({ ...current, fullName: event.target.value }))}
-                    className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
+                    className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#313862] focus:ring-2 focus:ring-[#d7d9e8]"
                   />
                 </label>
               </div>
@@ -437,7 +437,7 @@ export function UsuariosWebPage() {
                     type="password"
                     value={form.password}
                     onChange={(event) => setForm((current) => ({ ...current, password: event.target.value }))}
-                    className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
+                    className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#313862] focus:ring-2 focus:ring-[#d7d9e8]"
                   />
                 </label>
                 <label className="block">
@@ -446,7 +446,7 @@ export function UsuariosWebPage() {
                     type="password"
                     value={form.confirmPassword}
                     onChange={(event) => setForm((current) => ({ ...current, confirmPassword: event.target.value }))}
-                    className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
+                    className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#313862] focus:ring-2 focus:ring-[#d7d9e8]"
                   />
                 </label>
                 <label className="block">
@@ -454,7 +454,7 @@ export function UsuariosWebPage() {
                   <input
                     value={form.assignedPdaId}
                     onChange={(event) => setForm((current) => ({ ...current, assignedPdaId: event.target.value }))}
-                    className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
+                    className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#313862] focus:ring-2 focus:ring-[#d7d9e8]"
                   />
                 </label>
               </div>
@@ -530,7 +530,7 @@ export function UsuariosWebPage() {
                 type="button"
                 onClick={() => void submitUser()}
                 disabled={saving || (!canCreate && editingEmail === null) || (!canEdit && editingEmail !== null)}
-                className="rounded-xl bg-emerald-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-800 disabled:opacity-60"
+                className="rounded-xl bg-[#313862] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#272d50] disabled:opacity-60"
               >
                 {saving ? 'Guardando...' : editingEmail ? 'Guardar cambios' : 'Crear usuario web'}
               </button>

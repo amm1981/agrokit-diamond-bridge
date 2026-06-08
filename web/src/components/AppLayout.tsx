@@ -211,7 +211,7 @@ function SidebarLink({
           collapsed ? 'h-12 justify-center px-0' : 'gap-4 px-5 py-4 text-[17px]'
         } ${
           isActive
-            ? 'bg-emerald-100/80 text-slate-950 shadow-sm before:absolute before:-left-3 before:top-1/2 before:h-10 before:w-1 before:-translate-y-1/2 before:rounded-r-full before:bg-emerald-600'
+            ? 'bg-[#e4e6f0] text-slate-950 shadow-sm before:absolute before:-left-3 before:top-1/2 before:h-10 before:w-1 before:-translate-y-1/2 before:rounded-r-full before:bg-[#313862]'
             : 'text-slate-700 hover:bg-white/70 hover:text-slate-950'
         }`
       }
@@ -319,7 +319,7 @@ export function AppLayout() {
               onClick={logout}
               title="Cerrar sesion"
               aria-label="Cerrar sesion"
-              className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-slate-800 transition hover:bg-white/80 hover:text-emerald-700"
+              className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-slate-800 transition hover:bg-white/80 hover:text-[#313862]"
             >
               <LogoutIcon className="h-5 w-5" />
             </button>
@@ -353,7 +353,7 @@ export function AppLayout() {
               <select
                 value={selectedEventId}
                 onChange={(event) => setSelectedEventId(event.target.value)}
-                className="h-10 w-[min(54vw,340px)] rounded-lg border border-slate-300 bg-white px-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+                className="h-10 w-[min(54vw,340px)] rounded-lg border border-slate-300 bg-white px-3 text-sm outline-none transition focus:border-[#313862] focus:ring-2 focus:ring-[#e4e6f0]"
               >
                 <option value="">Seleccionar evento</option>
                 {events.map((item) => (
@@ -367,7 +367,7 @@ export function AppLayout() {
             <span
               title={isOnline ? 'Conexion activa' : 'Sin conexion'}
               className={`ml-auto inline-flex h-9 w-9 items-center justify-center rounded-full ${
-                isOnline ? 'bg-emerald-50 text-emerald-700' : 'bg-red-50 text-red-700'
+                isOnline ? 'bg-[#f3f4fa] text-[#313862]' : 'bg-red-50 text-red-700'
               }`}
             >
               <SignalIcon className="h-4 w-4" />

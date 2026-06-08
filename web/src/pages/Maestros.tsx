@@ -44,7 +44,7 @@ const emptySectorForm: SectorForm = {
 
 function statusClass(active: boolean) {
   return active
-    ? 'border-emerald-200 bg-emerald-50 text-emerald-700'
+    ? 'border-[#d7d9e8] bg-[#f3f4fa] text-[#313862]'
     : 'border-slate-200 bg-slate-100 text-slate-500'
 }
 
@@ -293,7 +293,7 @@ export function MaestrosPage() {
 
       {actionError ? <ErrorBanner message={actionError} /> : null}
       {actionMessage ? (
-        <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-700">
+        <div className="rounded-xl border border-[#d7d9e8] bg-[#f3f4fa] p-3 text-sm text-[#313862]">
           {actionMessage}
         </div>
       ) : null}
@@ -306,7 +306,7 @@ export function MaestrosPage() {
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           placeholder="Buscar por nombre o codigo..."
-          className="mt-2 h-11 w-full rounded-xl border border-slate-300 px-4 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+          className="mt-2 h-11 w-full rounded-xl border border-slate-300 px-4 text-sm outline-none transition focus:border-[#313862] focus:ring-2 focus:ring-[#e4e6f0]"
         />
       </div>
 
@@ -334,7 +334,7 @@ export function MaestrosPage() {
                     onChange={(event) => setGerenciaForm((current) => ({ ...current, name: event.target.value }))}
                     disabled={savingKey === 'gerencia-save'}
                     placeholder="Gerencia Cítrico"
-                    className="mt-2 h-11 w-full rounded-xl border border-slate-300 bg-white px-4 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 disabled:opacity-60"
+                    className="mt-2 h-11 w-full rounded-xl border border-slate-300 bg-white px-4 text-sm outline-none transition focus:border-[#313862] focus:ring-2 focus:ring-[#e4e6f0] disabled:opacity-60"
                   />
                 </label>
                 <label className="flex items-center gap-2 self-end rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700">
@@ -342,7 +342,7 @@ export function MaestrosPage() {
                     type="checkbox"
                     checked={gerenciaForm.active}
                     onChange={(event) => setGerenciaForm((current) => ({ ...current, active: event.target.checked }))}
-                    className="h-4 w-4 accent-emerald-700"
+                    className="h-4 w-4 accent-[#313862]"
                   />
                   Activo
                 </label>
@@ -360,7 +360,7 @@ export function MaestrosPage() {
                 <button
                   type="submit"
                   disabled={savingKey === 'gerencia-save' || (!gerenciaForm.originalName && !canCreate) || (gerenciaForm.originalName !== null && !canEdit)}
-                  className="rounded-xl bg-emerald-700 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-800 disabled:cursor-not-allowed disabled:bg-slate-300"
+                  className="rounded-xl bg-[#313862] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#272d50] disabled:cursor-not-allowed disabled:bg-slate-300"
                 >
                   {gerenciaForm.originalName ? 'Actualizar' : 'Crear gerencia'}
                 </button>
@@ -436,7 +436,7 @@ export function MaestrosPage() {
                     onChange={(event) => setSectorForm((current) => ({ ...current, id: event.target.value }))}
                     disabled={sectorForm.editingId !== null || savingKey === 'sector-save'}
                     placeholder="pisco"
-                    className="mt-2 h-11 w-full rounded-xl border border-slate-300 bg-white px-4 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-500"
+                    className="mt-2 h-11 w-full rounded-xl border border-slate-300 bg-white px-4 text-sm outline-none transition focus:border-[#313862] focus:ring-2 focus:ring-[#e4e6f0] disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-500"
                   />
                 </label>
                 <label className="block">
@@ -446,7 +446,7 @@ export function MaestrosPage() {
                     onChange={(event) => setSectorForm((current) => ({ ...current, name: event.target.value }))}
                     disabled={savingKey === 'sector-save'}
                     placeholder="Pisco"
-                    className="mt-2 h-11 w-full rounded-xl border border-slate-300 bg-white px-4 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 disabled:opacity-60"
+                    className="mt-2 h-11 w-full rounded-xl border border-slate-300 bg-white px-4 text-sm outline-none transition focus:border-[#313862] focus:ring-2 focus:ring-[#e4e6f0] disabled:opacity-60"
                   />
                 </label>
                 <label className="flex items-center gap-2 self-end rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700">
@@ -454,7 +454,7 @@ export function MaestrosPage() {
                     type="checkbox"
                     checked={sectorForm.active}
                     onChange={(event) => setSectorForm((current) => ({ ...current, active: event.target.checked }))}
-                    className="h-4 w-4 accent-emerald-700"
+                    className="h-4 w-4 accent-[#313862]"
                   />
                   Activo
                 </label>
@@ -472,7 +472,7 @@ export function MaestrosPage() {
                 <button
                   type="submit"
                   disabled={savingKey === 'sector-save' || (!sectorForm.editingId && !canCreate) || (sectorForm.editingId !== null && !canEdit)}
-                  className="rounded-xl bg-emerald-700 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-800 disabled:cursor-not-allowed disabled:bg-slate-300"
+                  className="rounded-xl bg-[#313862] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#272d50] disabled:cursor-not-allowed disabled:bg-slate-300"
                 >
                   {sectorForm.editingId ? 'Actualizar' : 'Crear sector'}
                 </button>

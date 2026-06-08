@@ -467,7 +467,7 @@ export function EntregasPage() {
     <section className="space-y-4">
       <PageHeader title="Resumen de entregas" description="Trazabilidad por producto y evidencia de foto con URL." />
 
-      <div className="relative space-y-3 rounded-2xl border border-slate-200 bg-white p-4 pl-5 shadow-sm before:absolute before:bottom-4 before:left-0 before:top-4 before:w-2 before:rounded-r-full before:bg-emerald-600 before:shadow-[0_0_10px_rgba(22,163,74,0.7)]">
+      <div className="relative space-y-3 rounded-2xl border border-slate-200 bg-white p-4 pl-5 shadow-sm before:absolute before:bottom-4 before:left-0 before:top-4 before:w-2 before:rounded-r-full before:bg-[#313862] before:shadow-[0_0_10px_rgba(49,56,98,0.45)]">
         <div className="flex flex-wrap items-end justify-between gap-3">
           <div>
             <p className="text-sm font-semibold text-slate-800">Resumen stock/consumo por sector</p>
@@ -496,9 +496,9 @@ export function EntregasPage() {
         </div>
 
         <div className="grid gap-3 md:grid-cols-3">
-          <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-3">
-            <p className="text-xs text-emerald-700">Stock asignado</p>
-            <p className="text-xl font-bold text-emerald-800">{sectorSummary.assignedTotal}</p>
+          <div className="rounded-xl border border-[#d7d9e8] bg-[#f3f4fa] p-3">
+            <p className="text-xs text-[#313862]">Stock asignado</p>
+            <p className="text-xl font-bold text-[#272d50]">{sectorSummary.assignedTotal}</p>
           </div>
           <div className="rounded-xl border border-indigo-200 bg-indigo-50 p-3">
             <p className="text-xs text-indigo-700">Consumo entregado</p>
@@ -572,10 +572,10 @@ export function EntregasPage() {
       {error ? <ErrorBanner message={error} /> : null}
       {actionError ? <ErrorBanner message={actionError} /> : null}
       {actionMessage ? (
-        <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-700">{actionMessage}</div>
+        <div className="rounded-xl border border-[#d7d9e8] bg-[#f3f4fa] p-3 text-sm text-[#313862]">{actionMessage}</div>
       ) : null}
 
-      <div className="relative grid gap-3 rounded-2xl border border-slate-200 bg-white p-4 pl-5 shadow-sm before:absolute before:bottom-4 before:left-0 before:top-4 before:w-2 before:rounded-r-full before:bg-emerald-600 before:shadow-[0_0_10px_rgba(22,163,74,0.7)] md:grid-cols-12">
+      <div className="relative grid gap-3 rounded-2xl border border-slate-200 bg-white p-4 pl-5 shadow-sm before:absolute before:bottom-4 before:left-0 before:top-4 before:w-2 before:rounded-r-full before:bg-[#313862] before:shadow-[0_0_10px_rgba(49,56,98,0.45)] md:grid-cols-12">
         <label className="md:col-span-4">
           <span className="mb-1 block text-sm font-medium text-slate-700">Buscar</span>
           <input
@@ -703,17 +703,17 @@ export function EntregasPage() {
         </div>
       ) : null}
 
-      <div className="relative rounded-xl border border-slate-200 bg-white px-4 py-3 pl-5 text-sm text-slate-600 shadow-sm before:absolute before:bottom-1 before:left-0 before:top-1 before:w-2 before:rounded-r-full before:bg-emerald-600 before:shadow-[0_0_10px_rgba(22,163,74,0.7)]">
+      <div className="relative rounded-xl border border-slate-200 bg-white px-4 py-3 pl-5 text-sm text-slate-600 shadow-sm before:absolute before:bottom-1 before:left-0 before:top-1 before:w-2 before:rounded-r-full before:bg-[#313862] before:shadow-[0_0_10px_rgba(49,56,98,0.45)]">
         Grupos: <span className="font-semibold text-slate-900">{groupedCount}</span>
         {' '}| Entregas filtradas: <span className="font-semibold text-slate-900">{filteredEvents.length}</span>
       </div>
 
       {filteredEvents.length === 0 ? (
-        <div className="relative pt-4 before:absolute before:left-1 before:right-1 before:top-0 before:h-2 before:rounded-full before:bg-emerald-600 before:shadow-[0_0_10px_rgba(22,163,74,0.7)]">
+        <div className="relative pt-4 before:absolute before:left-1 before:right-1 before:top-0 before:h-2 before:rounded-full before:bg-[#313862] before:shadow-[0_0_10px_rgba(49,56,98,0.45)]">
           <EmptyState title="Sin entregas" description="No hay eventos para los filtros seleccionados." />
         </div>
       ) : (
-        <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white pt-4 shadow-sm before:absolute before:left-1 before:right-1 before:top-0 before:h-2 before:rounded-full before:bg-emerald-600 before:shadow-[0_0_10px_rgba(22,163,74,0.7)]">
+        <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white pt-4 shadow-sm before:absolute before:left-1 before:right-1 before:top-0 before:h-2 before:rounded-full before:bg-[#313862] before:shadow-[0_0_10px_rgba(49,56,98,0.45)]">
           <div className="space-y-2 p-3 md:hidden">
             {filteredEvents.map((event) => {
               const photoUrl = resolvePhotoUrl(event.photoPath)

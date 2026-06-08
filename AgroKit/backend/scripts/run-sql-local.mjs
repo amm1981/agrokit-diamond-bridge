@@ -25,7 +25,7 @@ if (databaseFlagIndex >= 0 && !normalizeDatabaseName(databaseOverride)) {
   console.error(`Nombre de base invalido: ${databaseOverride || '(vacio)'}`)
   process.exit(1)
 }
-const mysqlDb = normalizeDatabaseName(databaseOverride) || process.env.MYSQL_DB || 'agrokit'
+const mysqlDb = normalizeDatabaseName(databaseOverride) || process.env.MYSQL_DB || 'agrokit_diamond'
 const mysqlUser = process.env.MYSQL_USER || 'root'
 const mysqlPassword = process.env.MYSQL_PASSWORD || ''
 

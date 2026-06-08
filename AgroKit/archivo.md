@@ -190,8 +190,8 @@ Tablas principales:
 - El resumen abre como pantalla interna (no modal).
 - Boton volver y soporte de boton atras Android.
 - Conexion actual del app:
-  - REST: `https://agrokit.agrocalera.app` (rutas con prefijo `/api`)
-  - WebSocket: `wss://agrokit.agrocalera.app/ws`
+  - REST: `https://db.agrokit.agrocalera.app` (rutas con prefijo `/api`)
+  - WebSocket: `wss://db.agrokit.agrocalera.app/ws`
   - Las rutas del app incluyen el prefijo `/api`.
 
 ### 8.2 Login app

@@ -1,4 +1,4 @@
-﻿package com.amm19.agrokit.presentation.ui
+package com.amm19.agrokit.presentation.ui
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -318,7 +318,7 @@ fun AgroKitHomeScreen(
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = Color.White,
-                    titleContentColor = Color(0xFF064728)
+                    titleContentColor = Color(0xFF313862)
                 ),
                 actions = {
                     IconButton(
@@ -332,7 +332,7 @@ fun AgroKitHomeScreen(
                         Icon(
                             imageVector = if (state.isOnline) Icons.Outlined.Wifi else Icons.Outlined.WifiOff,
                             contentDescription = if (state.isOnline) "Conectado" else "Sin internet",
-                            tint = if (state.isOnline) Color(0xFF1B7F46) else Color(0xFFB3261E),
+                            tint = if (state.isOnline) Color(0xFF313862) else Color(0xFFB3261E),
                             modifier = Modifier.size(23.dp)
                         )
                     }
@@ -344,7 +344,7 @@ fun AgroKitHomeScreen(
                         Icon(
                             Icons.Outlined.CloudSync,
                             contentDescription = "Sincronizar",
-                            tint = if (state.pendingSyncTotal > 0) Color(0xFFB15A00) else Color(0xFF102219),
+                            tint = if (state.pendingSyncTotal > 0) Color(0xFFB15A00) else Color(0xFF15192D),
                             modifier = Modifier.size(23.dp)
                         )
                     }
@@ -352,7 +352,7 @@ fun AgroKitHomeScreen(
                         Icon(
                             Icons.AutoMirrored.Outlined.Logout,
                             contentDescription = "Salir",
-                            tint = Color(0xFF087A3A),
+                            tint = Color(0xFF313862),
                             modifier = Modifier.size(23.dp)
                         )
                     }
@@ -387,7 +387,7 @@ fun AgroKitHomeScreen(
                     .padding(innerPadding)
                     .background(
                         Brush.radialGradient(
-                            colors = listOf(Color(0xFFEAF5EE), Color.White),
+                            colors = listOf(Color(0xFFF3F4FA), Color.White),
                             radius = 960f
                         )
                     )
@@ -478,9 +478,9 @@ private fun AppMessageDialog(
         else -> "AgroKit"
     }
     val accentColor = when {
-        syncSummary != null -> Color(0xFF0B6B3A)
+        syncSummary != null -> Color(0xFF313862)
         isError -> Color(0xFFB3261E)
-        else -> Color(0xFF0B6B3A)
+        else -> Color(0xFF313862)
     }
     val icon = when {
         syncSummary != null -> Icons.Outlined.CheckCircle
@@ -540,7 +540,7 @@ private fun SyncSummaryContent(summary: SyncSummaryUi) {
             style = MaterialTheme.typography.bodyMedium.copy(fontSize = 15.sp, lineHeight = 21.sp),
             color = Color(0xFF3C4A43)
         )
-        SyncMetricSection(title = "Subidos", bucket = summary.uploaded, accentColor = Color(0xFF0B6B3A))
+        SyncMetricSection(title = "Subidos", bucket = summary.uploaded, accentColor = Color(0xFF313862))
         SyncMetricSection(title = "Descargados", bucket = summary.downloaded, accentColor = Color(0xFF256D85))
     }
 }
@@ -607,7 +607,7 @@ private fun SyncMetric(
             text = value.toString(),
             style = MaterialTheme.typography.titleLarge.copy(fontSize = 22.sp),
             fontWeight = FontWeight.Bold,
-            color = Color(0xFF102219)
+            color = Color(0xFF15192D)
         )
         Text(
             text = label,
@@ -660,7 +660,7 @@ private fun LoginSection(
     onLoginClick: () -> Unit
 ) {
     var passwordVisible by remember { mutableStateOf(false) }
-    val brandGreen = Color(0xFF064728)
+    val brandColor = Color(0xFF313862)
     val softGreen = Color(0xFFEAF4EC)
     val fieldShape = RoundedCornerShape(22.dp)
 
@@ -674,7 +674,7 @@ private fun LoginSection(
                 .padding(innerPadding)
                 .background(
                     Brush.radialGradient(
-                        colors = listOf(Color(0xFFEAF5EE), Color.White),
+                        colors = listOf(Color(0xFFF3F4FA), Color.White),
                         radius = 980f
                     )
                 )
@@ -699,7 +699,7 @@ private fun LoginSection(
                     shape = RoundedCornerShape(30.dp),
                     colors = CardDefaults.cardColors(containerColor = Color(0xF8FFFFFF)),
                     elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
-                    border = BorderStroke(1.dp, Color(0xFFE0E7E2))
+                    border = BorderStroke(1.dp, Color(0xFFD7D9E8))
                 ) {
                     Column(
                         modifier = Modifier
@@ -712,7 +712,7 @@ private fun LoginSection(
                             text = "Login",
                             style = MaterialTheme.typography.headlineSmall.copy(fontSize = 30.sp),
                             fontWeight = FontWeight.Bold,
-                            color = brandGreen
+                            color = brandColor
                         )
 
                         OutlinedTextField(
@@ -726,17 +726,17 @@ private fun LoginSection(
                                 Icon(
                                     imageVector = Icons.Outlined.Email,
                                     contentDescription = null,
-                                    tint = brandGreen
+                                    tint = brandColor
                                 )
                             },
                             colors = OutlinedTextFieldDefaults.colors(
-                                focusedBorderColor = brandGreen,
+                                focusedBorderColor = brandColor,
                                 unfocusedBorderColor = Color(0xFFD7DDD9),
                                 focusedContainerColor = Color.White,
                                 unfocusedContainerColor = Color.White,
-                                cursorColor = brandGreen,
-                                focusedTextColor = Color(0xFF102219),
-                                unfocusedTextColor = Color(0xFF102219)
+                                cursorColor = brandColor,
+                                focusedTextColor = Color(0xFF15192D),
+                                unfocusedTextColor = Color(0xFF15192D)
                             )
                         )
 
@@ -756,7 +756,7 @@ private fun LoginSection(
                                 Icon(
                                     imageVector = Icons.Outlined.Lock,
                                     contentDescription = null,
-                                    tint = brandGreen
+                                    tint = brandColor
                                 )
                             },
                             trailingIcon = {
@@ -775,18 +775,18 @@ private fun LoginSection(
                                         } else {
                                             "Mostrar contrasena"
                                         },
-                                        tint = brandGreen
+                                        tint = brandColor
                                     )
                                 }
                             },
                             colors = OutlinedTextFieldDefaults.colors(
-                                focusedBorderColor = brandGreen,
+                                focusedBorderColor = brandColor,
                                 unfocusedBorderColor = Color(0xFFD7DDD9),
                                 focusedContainerColor = Color.White,
                                 unfocusedContainerColor = Color.White,
-                                cursorColor = brandGreen,
-                                focusedTextColor = Color(0xFF102219),
-                                unfocusedTextColor = Color(0xFF102219)
+                                cursorColor = brandColor,
+                                focusedTextColor = Color(0xFF15192D),
+                                unfocusedTextColor = Color(0xFF15192D)
                             )
                         )
 
@@ -798,7 +798,7 @@ private fun LoginSection(
                                 .heightIn(min = 56.dp),
                             shape = RoundedCornerShape(28.dp),
                             colors = ButtonDefaults.buttonColors(
-                                containerColor = brandGreen,
+                                containerColor = brandColor,
                                 contentColor = Color.White,
                                 disabledContainerColor = softGreen,
                                 disabledContentColor = Color(0xFF6A756F)
@@ -870,7 +870,7 @@ private fun DeliverySection(
     }
 
     val dniError = state.dniInput.isNotEmpty() && state.dniInput.length < 8
-    val activeGreen = Color(0xFF087A3A)
+    val activeBrand = Color(0xFF313862)
     val cardPadding = if (compact) 12.dp else 18.dp
     val titleSize = if (compact) 19.sp else 23.sp
     val fieldHeight = if (compact) 52.dp else 60.dp
@@ -892,7 +892,7 @@ private fun DeliverySection(
                 fontSize = titleSize,
                 fontWeight = FontWeight.Bold
             ),
-            color = Color(0xFF102219)
+            color = Color(0xFF15192D)
         )
 
         if (state.deliveryWindowEnabled) {
@@ -900,7 +900,7 @@ private fun DeliverySection(
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(14.dp),
                 colors = CardDefaults.cardColors(
-                    containerColor = if (windowInRange) Color(0xFFEAF5EE) else Color(0xFFFDECEC)
+                    containerColor = if (windowInRange) Color(0xFFF3F4FA) else Color(0xFFFDECEC)
                 )
             ) {
                 Row(
@@ -911,7 +911,7 @@ private fun DeliverySection(
                     Icon(
                         imageVector = if (windowInRange) Icons.Outlined.CheckCircle else Icons.Outlined.ErrorOutline,
                         contentDescription = null,
-                        tint = if (windowInRange) activeGreen else Color(0xFF9F1D1D),
+                        tint = if (windowInRange) activeBrand else Color(0xFF9F1D1D),
                         modifier = Modifier.size(if (compact) 20.dp else 24.dp)
                     )
                     Text(
@@ -920,7 +920,7 @@ private fun DeliverySection(
                         } else {
                             "Rango fuera de fecha. Entregas bloqueadas."
                         },
-                        color = if (windowInRange) activeGreen else Color(0xFF9F1D1D),
+                        color = if (windowInRange) activeBrand else Color(0xFF9F1D1D),
                         style = MaterialTheme.typography.bodyMedium.copy(fontSize = if (compact) 13.sp else 16.sp),
                         fontWeight = FontWeight.Medium
                     )
@@ -957,7 +957,7 @@ private fun DeliverySection(
                         Icon(
                             Icons.Outlined.CameraAlt,
                             contentDescription = "Escanear QR",
-                            tint = activeGreen,
+                            tint = activeBrand,
                             modifier = Modifier.size(if (compact) 22.dp else 24.dp)
                         )
                     }
@@ -973,14 +973,14 @@ private fun DeliverySection(
                 }
             },
             colors = OutlinedTextFieldDefaults.colors(
-                focusedBorderColor = activeGreen,
-                unfocusedBorderColor = activeGreen,
+                focusedBorderColor = activeBrand,
+                unfocusedBorderColor = activeBrand,
                 errorBorderColor = MaterialTheme.colorScheme.error,
                 focusedContainerColor = Color.White,
                 unfocusedContainerColor = Color.White,
-                cursorColor = activeGreen,
-                focusedTextColor = Color(0xFF102219),
-                unfocusedTextColor = Color(0xFF102219)
+                cursorColor = activeBrand,
+                focusedTextColor = Color(0xFF15192D),
+                unfocusedTextColor = Color(0xFF15192D)
             ),
             supportingText = {
                 Text(
@@ -999,8 +999,8 @@ private fun DeliverySection(
                 onClick = onOpenWorkersModal,
                 modifier = Modifier.weight(1f).heightIn(min = if (compact) 48.dp else 56.dp),
                 shape = RoundedCornerShape(if (compact) 16.dp else 18.dp),
-                border = BorderStroke(1.dp, activeGreen),
-                colors = ButtonDefaults.outlinedButtonColors(contentColor = activeGreen)
+                border = BorderStroke(1.dp, activeBrand),
+                colors = ButtonDefaults.outlinedButtonColors(contentColor = activeBrand)
             ) {
                 Icon(Icons.Outlined.Group, contentDescription = null, modifier = Modifier.size(if (compact) 20.dp else 24.dp))
                 Text(
@@ -1015,7 +1015,7 @@ private fun DeliverySection(
                 enabled = deliverDisabledReason == null,
                 shape = RoundedCornerShape(if (compact) 16.dp else 18.dp),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = activeGreen,
+                    containerColor = activeBrand,
                     disabledContainerColor = DisabledButtonContainer,
                     disabledContentColor = DisabledButtonContent
                 )
@@ -1030,12 +1030,12 @@ private fun DeliverySection(
         }
 
         if (deliverDisabledReason != null) {
-            HorizontalDivider(color = Color(0xFFDDE5DF))
+            HorizontalDivider(color = Color(0xFFE4E6F0))
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                Icon(Icons.Outlined.Info, contentDescription = null, tint = activeGreen, modifier = Modifier.size(if (compact) 18.dp else 22.dp))
+                Icon(Icons.Outlined.Info, contentDescription = null, tint = activeBrand, modifier = Modifier.size(if (compact) 18.dp else 22.dp))
                 Text(
                     text = deliverDisabledReason,
                     style = MaterialTheme.typography.bodySmall.copy(fontSize = if (compact) 12.sp else 15.sp),
@@ -1081,7 +1081,7 @@ private fun EventSelectorCard(
 ) {
     var expanded by remember { mutableStateOf(false) }
     val selectedLabel = if (activeEventName.isNotBlank()) activeEventName else activeEventId
-    val brandGreen = Color(0xFF064728)
+    val brandColor = Color(0xFF313862)
 
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -1100,7 +1100,7 @@ private fun EventSelectorCard(
                 fontSize = if (compact) 14.sp else 18.sp,
                 fontWeight = FontWeight.Bold
             ),
-            color = Color(0xFF102219)
+            color = Color(0xFF15192D)
         )
 
         Box {
@@ -1111,7 +1111,7 @@ private fun EventSelectorCard(
                     .fillMaxWidth()
                     .heightIn(min = if (compact) 56.dp else 76.dp),
                 shape = RoundedCornerShape(if (compact) 16.dp else 18.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF07813C), contentColor = Color.White),
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF313862), contentColor = Color.White),
                 elevation = ButtonDefaults.buttonElevation(defaultElevation = 5.dp)
             ) {
                 Row(
@@ -1128,7 +1128,7 @@ private fun EventSelectorCard(
                         Icon(
                             Icons.Outlined.DateRange,
                             contentDescription = null,
-                            tint = brandGreen,
+                            tint = brandColor,
                             modifier = Modifier.size(if (compact) 22.dp else 24.dp)
                         )
                     }
@@ -1209,7 +1209,7 @@ private fun SectorSelectionCard(
     onSelectSector: (String) -> Unit
 ) {
     if (sectors.isEmpty()) return
-    val brandGreen = Color(0xFF064728)
+    val brandColor = Color(0xFF313862)
 
     if (sectors.size == 1) {
         val sector = sectors.first()
@@ -1243,7 +1243,7 @@ private fun SectorSelectionCard(
                 fontSize = if (compact) 15.sp else 19.sp,
                 fontWeight = FontWeight.Bold
             ),
-            color = Color(0xFF102219)
+            color = Color(0xFF15192D)
         )
         Box {
             OutlinedButton(
@@ -1252,10 +1252,10 @@ private fun SectorSelectionCard(
                     .fillMaxWidth()
                     .heightIn(min = if (compact) 50.dp else 64.dp),
                 shape = RoundedCornerShape(if (compact) 15.dp else 18.dp),
-                border = BorderStroke(1.dp, Color(0xFF087A3A)),
+                border = BorderStroke(1.dp, Color(0xFF313862)),
                 colors = ButtonDefaults.outlinedButtonColors(
                     containerColor = Color.White,
-                    contentColor = Color(0xFF102219)
+                    contentColor = Color(0xFF15192D)
                 )
             ) {
                 Row(
@@ -1265,7 +1265,7 @@ private fun SectorSelectionCard(
                     Icon(
                         Icons.Outlined.LocationOn,
                         contentDescription = null,
-                        tint = brandGreen,
+                        tint = brandColor,
                         modifier = Modifier.size(if (compact) 23.dp else 30.dp)
                     )
                     Text(
@@ -1274,9 +1274,9 @@ private fun SectorSelectionCard(
                             .weight(1f)
                             .padding(horizontal = 12.dp),
                         style = MaterialTheme.typography.bodyLarge.copy(fontSize = if (compact) 16.sp else 20.sp),
-                        color = Color(0xFF102219)
+                        color = Color(0xFF15192D)
                     )
-                    Icon(Icons.Outlined.ArrowDropDown, contentDescription = null, tint = Color(0xFF087A3A))
+                    Icon(Icons.Outlined.ArrowDropDown, contentDescription = null, tint = Color(0xFF313862))
                 }
             }
             DropdownMenu(
@@ -1328,7 +1328,7 @@ private fun QrScannerModal(
                 text = "Escanear QR de fotocheck",
                 style = MaterialTheme.typography.titleMedium.copy(fontSize = 18.sp),
                 fontWeight = FontWeight.Bold,
-                color = Color(0xFF102219)
+                color = Color(0xFF15192D)
             )
         },
         text = {
@@ -1412,7 +1412,7 @@ private fun QrCameraPreview(onCodeScanned: (String) -> Unit) {
             .fillMaxWidth()
             .height(if (context.resources.configuration.screenHeightDp < 700) 220.dp else 280.dp)
             .clip(previewShape)
-            .background(Color(0xFF102219), previewShape)
+            .background(Color(0xFF15192D), previewShape)
     ) {
         AndroidView(
             modifier = Modifier.fillMaxSize(),
@@ -1870,13 +1870,13 @@ private fun StockSummaryScreen(
 ) {
     val selectedSectorLabel = sectors.firstOrNull { it.id == selectedSectorId }?.label
         ?: selectedSectorId.ifBlank { "Todas las sedes" }
-    val brandGreen = Color(0xFF064728)
+    val brandColor = Color(0xFF313862)
 
     Box(
         modifier = modifier
             .background(
                 Brush.radialGradient(
-                    colors = listOf(Color(0xFFEAF5EE), Color.White),
+                    colors = listOf(Color(0xFFF3F4FA), Color.White),
                     radius = 980f
                 )
             )
@@ -1896,12 +1896,12 @@ private fun StockSummaryScreen(
                     onClick = onBack,
                     modifier = Modifier
                         .size(46.dp)
-                        .background(Color(0xFFEAF5EE), RoundedCornerShape(16.dp))
+                        .background(Color(0xFFF3F4FA), RoundedCornerShape(16.dp))
                 ) {
                     Icon(
                         Icons.AutoMirrored.Outlined.ArrowBack,
                         contentDescription = "Volver",
-                        tint = brandGreen,
+                        tint = brandColor,
                         modifier = Modifier.size(24.dp)
                     )
                 }
@@ -1910,7 +1910,7 @@ private fun StockSummaryScreen(
                         text = "Resumen de stock y consumo",
                         style = MaterialTheme.typography.titleLarge.copy(fontSize = 22.sp),
                         fontWeight = FontWeight.Bold,
-                        color = brandGreen
+                        color = brandColor
                     )
                     if (updatedAt != null) {
                         Row(
@@ -1921,7 +1921,7 @@ private fun StockSummaryScreen(
                             Icon(
                                 imageVector = Icons.Outlined.CloudSync,
                                 contentDescription = null,
-                                tint = Color(0xFF16823A),
+                                tint = Color(0xFF313862),
                                 modifier = Modifier.size(17.dp)
                             )
                             Text(
@@ -1971,7 +1971,7 @@ private fun StockSummaryScreen(
                     contentAlignment = Alignment.Center
                 )
                 {
-                    CircularProgressIndicator(color = brandGreen)
+                    CircularProgressIndicator(color = brandColor)
                 }
             } else {
                 LazyColumn(
@@ -1996,14 +1996,14 @@ private fun StockSectorSelectorCard(
     onSelectSector: (String) -> Unit
 ) {
     var expanded by remember { mutableStateOf(false) }
-    val brandGreen = Color(0xFF064728)
+    val brandColor = Color(0xFF313862)
 
     Card(
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(if (compact) 18.dp else 22.dp),
         colors = CardDefaults.cardColors(containerColor = Color(0xFBFFFFFF)),
         elevation = CardDefaults.cardElevation(defaultElevation = 5.dp),
-        border = BorderStroke(1.dp, Color(0xFFE0E7E2))
+        border = BorderStroke(1.dp, Color(0xFFD7D9E8))
     ) {
         Column(
             modifier = Modifier.padding(if (compact) 10.dp else 14.dp),
@@ -2016,16 +2016,16 @@ private fun StockSectorSelectorCard(
                 Box(
                     modifier = Modifier
                         .size(if (compact) 32.dp else 40.dp)
-                        .background(Color(0xFFE3F2E6), RoundedCornerShape(if (compact) 12.dp else 16.dp)),
+                        .background(Color(0xFFE4E6F0), RoundedCornerShape(if (compact) 12.dp else 16.dp)),
                     contentAlignment = Alignment.Center
                 ) {
-                    Icon(Icons.Outlined.LocationOn, contentDescription = null, tint = brandGreen)
+                    Icon(Icons.Outlined.LocationOn, contentDescription = null, tint = brandColor)
                 }
                 Text(
                     text = "Sector de entrega",
                     style = MaterialTheme.typography.titleMedium.copy(fontSize = if (compact) 14.sp else 16.sp),
                     fontWeight = FontWeight.Bold,
-                    color = Color(0xFF102219)
+                    color = Color(0xFF15192D)
                 )
             }
 
@@ -2036,10 +2036,10 @@ private fun StockSectorSelectorCard(
                         .fillMaxWidth()
                         .heightIn(min = if (compact) 48.dp else 52.dp),
                     shape = RoundedCornerShape(if (compact) 15.dp else 20.dp),
-                    border = BorderStroke(1.dp, Color(0xFF16823A)),
+                    border = BorderStroke(1.dp, Color(0xFF313862)),
                     colors = ButtonDefaults.outlinedButtonColors(
                         containerColor = Color.White,
-                        contentColor = Color(0xFF102219)
+                        contentColor = Color(0xFF15192D)
                     )
                 ) {
                     Row(
@@ -2049,7 +2049,7 @@ private fun StockSectorSelectorCard(
                         Icon(
                             Icons.Outlined.LocationOn,
                             contentDescription = null,
-                            tint = brandGreen,
+                            tint = brandColor,
                             modifier = Modifier.size(if (compact) 22.dp else 24.dp)
                         )
                         Text(
@@ -2058,9 +2058,9 @@ private fun StockSectorSelectorCard(
                                 .weight(1f)
                                 .padding(horizontal = 10.dp),
                             style = MaterialTheme.typography.bodyLarge.copy(fontSize = if (compact) 16.sp else 17.sp),
-                            color = Color(0xFF102219)
+                            color = Color(0xFF15192D)
                         )
-                        Icon(Icons.Outlined.ArrowDropDown, contentDescription = null, tint = Color(0xFF102219))
+                        Icon(Icons.Outlined.ArrowDropDown, contentDescription = null, tint = Color(0xFF15192D))
                     }
                 }
                 DropdownMenu(
@@ -2093,7 +2093,7 @@ private fun StockTotalsCard(
         shape = RoundedCornerShape(22.dp),
         colors = CardDefaults.cardColors(containerColor = Color(0xFBFFFFFF)),
         elevation = CardDefaults.cardElevation(defaultElevation = 5.dp),
-        border = BorderStroke(1.dp, Color(0xFFE0E7E2))
+        border = BorderStroke(1.dp, Color(0xFFD7D9E8))
     ) {
         Row(
             modifier = Modifier
@@ -2120,7 +2120,7 @@ private fun StockTotalsCard(
                 label = "Saldo",
                 value = balance,
                 modifier = Modifier.weight(1f),
-                valueColor = if (balance >= 0.0) Color(0xFF0D8C3A) else Color(0xFFB3261E)
+                valueColor = if (balance >= 0.0) Color(0xFF313862) else Color(0xFFB3261E)
             )
         }
     }
@@ -2132,7 +2132,7 @@ private fun StockTotalMetric(
     label: String,
     value: Double,
     modifier: Modifier = Modifier,
-    valueColor: Color = Color(0xFF0D8C3A)
+    valueColor: Color = Color(0xFF313862)
 ) {
     Column(
         modifier = modifier,
@@ -2142,15 +2142,15 @@ private fun StockTotalMetric(
         Box(
             modifier = Modifier
                 .size(50.dp)
-                .background(Color(0xFFE3F2E6), RoundedCornerShape(25.dp)),
+                .background(Color(0xFFE4E6F0), RoundedCornerShape(25.dp)),
             contentAlignment = Alignment.Center
         ) {
-            Icon(icon, contentDescription = null, tint = Color(0xFF0B6B3A), modifier = Modifier.size(28.dp))
+            Icon(icon, contentDescription = null, tint = Color(0xFF313862), modifier = Modifier.size(28.dp))
         }
         Text(
             text = label,
             style = MaterialTheme.typography.labelMedium.copy(fontSize = 12.sp),
-            color = Color(0xFF102219)
+            color = Color(0xFF15192D)
         )
         Text(
             text = formatQty(value),
@@ -2166,20 +2166,20 @@ private fun StockVerticalDivider() {
     Box(
         modifier = Modifier
             .size(width = 1.dp, height = 84.dp)
-            .background(Color(0xFFDDE5DF))
+            .background(Color(0xFFE4E6F0))
     )
 }
 
 @Composable
 private fun StockProductSummaryCard(item: StockSummaryItemUi) {
-    val balanceColor = if (item.balanceStock >= 0.0) Color(0xFF0D8C3A) else Color(0xFFB3261E)
+    val balanceColor = if (item.balanceStock >= 0.0) Color(0xFF313862) else Color(0xFFB3261E)
 
     Card(
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(22.dp),
         colors = CardDefaults.cardColors(containerColor = Color(0xFBFFFFFF)),
         elevation = CardDefaults.cardElevation(defaultElevation = 5.dp),
-        border = BorderStroke(1.dp, Color(0xFFE0E7E2))
+        border = BorderStroke(1.dp, Color(0xFFD7D9E8))
     ) {
         Row(
             modifier = Modifier
@@ -2191,20 +2191,20 @@ private fun StockProductSummaryCard(item: StockSummaryItemUi) {
             Box(
                 modifier = Modifier
                     .size(82.dp)
-                    .background(Color(0xFFE3F2E6), RoundedCornerShape(41.dp)),
+                    .background(Color(0xFFE4E6F0), RoundedCornerShape(41.dp)),
                 contentAlignment = Alignment.Center
             ) {
                 Icon(
                     imageVector = Icons.Outlined.Category,
                     contentDescription = null,
-                    tint = Color(0xFF0B6B3A),
+                    tint = Color(0xFF313862),
                     modifier = Modifier.size(44.dp)
                 )
             }
             Box(
                 modifier = Modifier
                     .size(width = 1.dp, height = 104.dp)
-                    .background(Color(0xFFDDE5DF))
+                    .background(Color(0xFFE4E6F0))
             )
             Column(
                 modifier = Modifier.weight(1f),
@@ -2214,15 +2214,15 @@ private fun StockProductSummaryCard(item: StockSummaryItemUi) {
                     text = item.productName,
                     style = MaterialTheme.typography.titleMedium.copy(fontSize = 18.sp),
                     fontWeight = FontWeight.Bold,
-                    color = Color(0xFF102219)
+                    color = Color(0xFF15192D)
                 )
                 StockProductLine(label = "Stock asignado:", value = item.assignedStock)
-                HorizontalDivider(color = Color(0xFFE1E6E2))
+                HorizontalDivider(color = Color(0xFFD7D9E8))
                 StockProductLine(label = "Consumo:", value = item.consumedStock)
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color(0xFFEAF5EE), RoundedCornerShape(10.dp))
+                        .background(Color(0xFFF3F4FA), RoundedCornerShape(10.dp))
                         .padding(horizontal = 12.dp, vertical = 6.dp),
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
@@ -2259,18 +2259,18 @@ private fun StockProductLine(label: String, value: Double) {
             Box(
                 modifier = Modifier
                     .size(7.dp)
-                    .background(Color(0xFF16823A), RoundedCornerShape(4.dp))
+                    .background(Color(0xFF313862), RoundedCornerShape(4.dp))
             )
             Text(
                 text = label,
                 style = MaterialTheme.typography.bodyMedium.copy(fontSize = 15.sp),
-                color = Color(0xFF24342B)
+                color = Color(0xFF313862)
             )
         }
         Text(
             text = formatQty(value),
             style = MaterialTheme.typography.bodyMedium.copy(fontSize = 15.sp),
-            color = Color(0xFF102219)
+            color = Color(0xFF15192D)
         )
     }
 }

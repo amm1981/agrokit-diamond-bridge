@@ -231,7 +231,7 @@ class MainActivity : ComponentActivity() {
     private fun createPhotoFile(workerDni: String, products: List<DeliveryCaptureItemUi>): File {
         val baseDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
             ?: filesDir
-        val workerDir = File(baseDir, "AgroKit/photos/$workerDni")
+        val workerDir = File(baseDir, "AgroKit-DB/photos/$workerDni")
         if (!workerDir.exists()) {
             workerDir.mkdirs()
         }

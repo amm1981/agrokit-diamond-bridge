@@ -1,4 +1,4 @@
-﻿export function StatCard({
+export function StatCard({
   title,
   value,
   helper,
@@ -11,7 +11,7 @@
 }) {
   const toneClass =
     tone === 'success'
-      ? 'border-emerald-200 bg-emerald-50'
+      ? 'border-[#d7d9e8] bg-[#f3f4fa]'
       : tone === 'warning'
         ? 'border-amber-200 bg-amber-50'
         : 'border-slate-200 bg-white'
